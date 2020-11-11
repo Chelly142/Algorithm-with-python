@@ -10,3 +10,7 @@ def solution(w,h):
     answer = w*h-m*(a+b-1)
     return answer
     #w*h-w-h+m
+
+from math import gcd
+def solution(w,h):
+    return w*h - w - h + gcd(w,h)
