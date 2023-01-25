@@ -21,3 +21,30 @@ for i in range(n):
             result += 1
 
 print(result)
+'''
+n,m = map(int,input().split())
+graph = []
+for i in range(n):
+  graph.append(list(map(int,input())))
+
+def dfs(g,x,y):
+  g[x][y] = 1
+  if (x+1)!=n and g[x+1][y] == 0:
+    x = x+1
+    dfs(g,x,y)
+  if (y+1)!=m and g[x][y+1] == 0:
+    y = y+1
+    dfs(g,x,y)
+  if(x-1)>=0 and g[x-1][y] == 0:
+    x = x-1
+    dfs(g,x,y)
+  if(y-1)>=0 and g[x][y-1] == 0:
+    y = y-1
+    dfs(g,x,y)
+cnt = 0
+for i in range(n):
+  for j in range(m):
+    if graph[i][j] == 0:
+      dfs(graph,i,j) 
+      cnt+=1
+print(cnt)'''
