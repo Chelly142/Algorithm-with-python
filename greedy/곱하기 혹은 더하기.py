@@ -8,3 +8,10 @@ for i in l:
         result *= i
 
 print(result)
+
+s = input()
+answer = 0
+for c in s:
+  n = int(c)
+  answer = max(answer*n,answer+n)
+print(answer)
