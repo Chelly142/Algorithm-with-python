@@ -9,3 +9,14 @@ for i in a:
 result = n*(n-1)/2 -k
 
 print(int(result))
+
+n,m = map(int,input().split())
+l = list(map(int,input().split()))
+c = [0]*m
+
+d=0
+for i in range(1,m+1):
+  a = l.count(i)
+  d+=a*(a-1)/2
+s = set(l)
+print(int(len(l)*(len(l)-1)/2 - d))
