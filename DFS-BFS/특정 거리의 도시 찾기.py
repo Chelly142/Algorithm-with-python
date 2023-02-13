@@ -22,3 +22,27 @@ if c:#c가 0이 아닐 경우
             print(i)
 else:#c가 0
     print(-1)
+m = 4
+n=4
+k=1
+x=1
+ENF=10e9
+r = [(1,2),(1,3),(2,3),(2,4)]
+stack = []
+d = [ENF]*(m+1)
+d[x] = 0
+for i in r:
+  if i[0] == x:
+    stack.append(i)
+while stack:
+  road = stack.pop()
+  for i in r:
+    if road[1] == i[0]:
+      stack.append(i)
+  d[road[1]] = min(d[road[1]],d[road[0]]+1)
+
+for i,v in enumerate(d):
+  if v==k:
+    print(i)
+if k not in d:
+  print(-1)
