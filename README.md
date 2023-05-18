@@ -7,6 +7,8 @@ import sys
 sys.setrecursionlimit(1000000)
 다음과 같은 코드로 제한을 정해줄 수 있다.
 
+https://esot3ria.github.io/programming/2022-01-02-ps/
+
 # 그리드
 - 탐욕법이라고도하며 가장 효율적인 방법을 찾는 알고리즘 
 - 지금 이 순간 당장 최적의 답을 선택해 결과를 도출하자라는 마인드가 중요하다.
