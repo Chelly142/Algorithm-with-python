@@ -4,7 +4,9 @@
 
 # 눈 여겨볼 문제 수집
 [오답노트 및 문제 수집](./mustc_check_problem.md)
+
 [알면 편한 파이썬 문법](./python_tip.md)
+
 [문제 유형별 꿀팁!](./type_tip.md)
 
 
