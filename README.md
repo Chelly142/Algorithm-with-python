@@ -5,7 +5,7 @@
 # 눈 여겨볼 문제 수집
 [오답노트 및 문제 수집](./must_check_problem.md)
 
-[알면 편한 파이썬 문법](https://www.notion.so/43bcefa23a514212bc2ee035d802ad32)https://www.notion.so/43bcefa23a514212bc2ee035d802ad32)
+[알면 편한 파이썬 문법](https://www.notion.so/43bcefa23a514212bc2ee035d802ad32)
 
 [문제 유형별 꿀팁!](./type_tip.md)
 
