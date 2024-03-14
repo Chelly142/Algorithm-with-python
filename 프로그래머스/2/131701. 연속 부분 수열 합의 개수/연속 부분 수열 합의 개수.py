@@ -10,7 +10,7 @@ def solution(elements):
             if i+j <n:
                 s+=elements[i+j]
             else:
-                s+=elements[i+j-n]
+                s+=elements[(i+j)%n]
             l.append(s)
             l.append(t-s)
     answer = len(set(l))+1
