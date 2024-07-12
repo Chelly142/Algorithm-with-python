@@ -1,24 +1,22 @@
-n,k = map(int,input().split())
+import sys
+input = sys.stdin.readline
 
-w =[]
-v= []
-for i in range(n):
-  x,y= map(int,input().split())
-  w.append(x)
-  v.append(y)
+# dp[i] = max(dp[i-1], dp[k-weights[i]]+values[i])
 
-memo = [[-1]*(k+1) for _ in range(n)]
-def dp(i,W):
-  if i<0 or W<=0:
-    return 0
 
-  if memo[i][W]!=-1:
-    return memo[i][W]
-  if W>=w[i]:
-    memo[i][W] = max(dp(i-1,W-w[i])+v[i],dp(i-1,W))
-    return memo[i][W]
-  else:
-    memo[i][W] = dp(i-1,W)
-    return memo[i][W]
 
-print(dp(n-1,k))
+n, k = map(int,input().split())
+
+arr = [(0, 0)]
+dp = [[0] * (k + 1) for _ in range(n + 1)]
+for _ in range(n):
+    w, v = map(int, input().split())
+    arr.append((w, v))
+for i in range(1,n+1):
+    w, v = arr[i]
+    for j in range(1,k+1):
+        if w<=j:
+            dp[i][j] = max(dp[i-1][j], dp[i-1][j-w]+v)
+        else:
+            dp[i][j] = dp[i-1][j]
+print(dp[-1][-1])
