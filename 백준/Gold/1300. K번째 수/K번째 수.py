@@ -5,7 +5,7 @@ n = int(input())
 k = int(input())
 
 start = 1
-end = k
+end = n**2
 while start<=end:
     mid = (start+end)//2
     temp = 0
