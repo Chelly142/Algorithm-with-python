@@ -1,32 +1,23 @@
-oasis = [int(input()) for _ in range(int(input()))]
+import sys
+input = sys.stdin.readline
 
-stack = [] # (키, cnt)로 append
-result = 0
+n = int(input())
+heighs = []
+for _ in range(n):
+    heighs.append(int(input()))
 
-for o in oasis:
+stack = []
 
-  # 스택 끝 값보다 키 크면 pop
-  while stack and stack[-1][0]<o:
-    result += stack.pop()[1]
-
-  # 스택이 비어있으면 해당 키 append하고 continue
-  if not stack:
-    stack.append((o, 1))
-    continue
-
-    
-  # 스택 끝 값의 키와 같을 때
-  if stack[-1][0]==o:
-    cnt = stack.pop()[1]
-    result += cnt
-
-    if stack: result += 1
-    stack.append((o, cnt+1))
-
-  # 스택 끝 값의 키보다 작을 때
-  else:
-    stack.append((o, 1))
-    result += 1
-
-# 결과값 출력
-print(result)
+answer = 0
+equal_cnt = 0
+for i in range(n):
+    i_person = 1
+    while stack and stack[-1][0]<=heighs[i]:
+        heigh, person = stack.pop()
+        answer+=person
+        if heigh==heighs[i]:
+            i_person=person+1
+    if stack:
+        answer+=1
+    stack.append((heighs[i],i_person))
+print(answer)
