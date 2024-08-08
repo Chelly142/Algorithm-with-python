@@ -8,7 +8,6 @@ for _ in range(n):
 
 stack = []
 maximum_area = [0]*n
-answer = 0
 for i in range(n):
     while stack and histogram[stack[-1]]>histogram[i]:
         histogram_index = stack.pop()
@@ -20,8 +19,6 @@ for i in range(n):
 
 
     stack.append(i)
-    # print(stack)
-    # print(maximum_area)
 
 while stack:
         histogram_index = stack.pop()
