@@ -31,11 +31,13 @@ class Main {
 
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j <= sum; j++) {
-                if (dp[i - 1][j]) { // 이전 상태에서 j 무게를 만들 수 있으면
-                    dp[i][j] = true; // 그대로 유지
-                    if (j + weights[i] <= sum) dp[i][j + weights[i]] = true; // 현재 추를 더한 경우
-                    dp[i][Math.abs(j - weights[i])] = true; // 현재 추를 뺀 경우
+                if (!dp[i - 1][j]) {
+                    continue;// 이전 상태에서 j 무게를 만들 수 있으면
                 }
+                dp[i][j] = true; // 그대로 유지
+                if (j + weights[i] <= sum) dp[i][j + weights[i]] = true; // 현재 추를 더한 경우
+                dp[i][Math.abs(j - weights[i])] = true; // 현재 추를 뺀 경우
+
             }
         }
 
