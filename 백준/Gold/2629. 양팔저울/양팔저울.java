@@ -5,6 +5,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
         int n = Integer.parseInt(br.readLine());
 
@@ -42,31 +43,20 @@ class Main {
                     dp[i][j] = dp[i-1][j];
                 }
             }
-//            System.out.println(Arrays.toString(dp[i]));
         }
-//        if (weights[i] > j) {
-//            if (weights[i] - dp[weights[i] - j] == j) {
-//                dp[j] = j;
-//            }
-//        } else if (weights[i] + j <= sum) {
-//            if (dp[weights[i] + j] - weights[i] == j) {
-//                dp[j] = j;
-//            }
-//        } else {
-//            dp[j] = Math.max(dp[j], dp[j - weights[i]] + weights[i]);
-//        }
 
         for (int c : check) {
             if (c > sum) {
-                System.out.print("N ");
+                sb.append("N ");
                 continue;
             }
             if (dp[n][c] == c) {
-                System.out.print("Y ");
+                sb.append("Y ");
             } else {
-                System.out.print("N ");
+                sb.append("N ");
             }
         }
+        System.out.println(sb);
     }
 
 }
