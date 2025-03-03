@@ -7,10 +7,10 @@ class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         StringTokenizer st;
-        
+
         int n = Integer.parseInt(br.readLine());
         int[] weights = new int[n + 1];
-        
+
         st = new StringTokenizer(br.readLine());
         int sum = 0;
         for (int i = 1; i <= n; i++) {
@@ -20,7 +20,7 @@ class Main {
 
         int k = Integer.parseInt(br.readLine());
         int[] check = new int[k];
-        
+
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < k; i++) {
             check[i] = Integer.parseInt(st.nextToken());
@@ -34,7 +34,7 @@ class Main {
                 if (dp[i - 1][j]) { // 이전 상태에서 j 무게를 만들 수 있으면
                     dp[i][j] = true; // 그대로 유지
                     if (j + weights[i] <= sum) dp[i][j + weights[i]] = true; // 현재 추를 더한 경우
-                    if (Math.abs(j - weights[i]) <= sum) dp[i][Math.abs(j - weights[i])] = true; // 현재 추를 뺀 경우
+                    dp[i][Math.abs(j - weights[i])] = true; // 현재 추를 뺀 경우
                 }
             }
         }
@@ -48,7 +48,7 @@ class Main {
                 sb.append("N ");
             }
         }
-        
+
         System.out.println(sb); // 결과 출력
     }
 }
