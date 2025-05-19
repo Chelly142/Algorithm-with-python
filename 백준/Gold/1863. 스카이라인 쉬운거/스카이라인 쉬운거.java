@@ -25,10 +25,6 @@ public class Main {
 				stack.clear();
 				continue;
 			}
-			if (stack.isEmpty()) {
-				stack.add(nowH);
-				continue;
-			}
 			
 			while (true) {
 				if(stack.isEmpty()) {
